@@ -6,11 +6,24 @@
 			<th>No.</th>
 			<th>Tarea</th>
 			<th>Duración</th>
-		</tr >
+		</tr>
 		<tr *ngFor="let tarea of tareas;index as i;">
 			<td>{{i}}</td>
 			<td>{{tarea.titulo}}</td>
 			<td>{{tarea.minutos}}</td>
 		</tr>
 	</table>
+	<hr>
+	<h2>Nueva Tarea</h2>
+	<form [formGroup]="nuevaTarea" (ngSubmit)="onSubmit()">
+		<div>
+			<label>Nombre de la tarea</label>
+			<input id="titulo" type="text" formControlName="titulo">
+		</div>
+		<div>
+			<label>Duración de la tarea</label>
+			<input id="minutos" type="number" formControlName="minutos">
+		</div>
+		<button class="button" type="submit">Agregar</button>
+	</form>
 </div>
