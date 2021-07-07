@@ -32,4 +32,9 @@ export class AppComponent {
 	eliminarTarea(id){
 		this.tareas.splice(id,1)
 	}
+	ordenar(){
+		this.tareas.sort(function(a, b) {
+			return a.minutos - b.minutos;
+		  })
+	}
 }

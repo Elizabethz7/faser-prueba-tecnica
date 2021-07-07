@@ -15,6 +15,7 @@
 			<td><button class="button" (click)="eliminarTarea(i)">Eliminar</button></td>
 		</tr>
 	</table>
+	<button class="button" (click)="ordenar()">Ordenar</button>
 	<hr>
 	<h2>Nueva Tarea</h2>
 	<form [formGroup]="nuevaTarea" (ngSubmit)="onSubmit()">
