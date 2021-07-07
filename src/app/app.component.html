@@ -8,11 +8,11 @@
 			<th>Duración</th>
 			<th></th>
 		</tr>
-		<tr *ngFor="let tarea of tareas;index as i;">
+		<tr  [ngStyle]="{'background-color':tarea.favorito ? 'yellow' : 'white' }"  *ngFor="let tarea of tareas;index as i;">
 			<td>{{i}}</td>
 			<td>{{tarea.titulo}}</td>
 			<td>{{tarea.minutos}}</td>
-			<td><button class="button" (click)="eliminarTarea(i)">Eliminar</button></td>
+			<td><button class="button" (click)="eliminarTarea(i)">Eliminar</button><button class="button" (click)="agregarFavorito(i)">Destacar</button></td>
 		</tr>
 	</table>
 	<button class="button" (click)="ordenar()">Ordenar</button>
