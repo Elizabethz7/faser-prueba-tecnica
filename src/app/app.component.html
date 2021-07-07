@@ -6,11 +6,13 @@
 			<th>No.</th>
 			<th>Tarea</th>
 			<th>Duración</th>
+			<th></th>
 		</tr>
 		<tr *ngFor="let tarea of tareas;index as i;">
 			<td>{{i}}</td>
 			<td>{{tarea.titulo}}</td>
 			<td>{{tarea.minutos}}</td>
+			<td><button class="button" (click)="eliminarTarea(i)">Eliminar</button></td>
 		</tr>
 	</table>
 	<hr>

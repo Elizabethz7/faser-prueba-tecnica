@@ -29,4 +29,7 @@ export class AppComponent {
 		this.tareas.push(this.nuevaTarea.value)
 		this.nuevaTarea.reset();
 	}
+	eliminarTarea(id){
+		this.tareas.splice(id,1)
+	}
 }
