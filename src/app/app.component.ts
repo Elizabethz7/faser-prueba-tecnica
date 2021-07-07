@@ -10,8 +10,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class AppComponent {
 	tareas: Tarea[];
-	nuevaTarea = this.formBuilder.group(new Tarea(0,"",0,false));
-	ordenAsc:boolean=true;
+	nuevaTarea = this.formBuilder.group(new Tarea(0, "", 0, false));
+	ordenAsc: boolean = true;
 
 	constructor(
 		public service: AppService,
@@ -30,24 +30,24 @@ export class AppComponent {
 		this.tareas.push(this.nuevaTarea.value)
 		this.nuevaTarea.reset();
 	}
-	eliminarTarea(id){
-		this.tareas.splice(id,1)
+	eliminarTarea(id) {
+		this.tareas.splice(id, 1)
 	}
-	ordenar(){
-		if(this.ordenAsc){
-			this.tareas.sort(function(a, b) {
+	ordenar() {
+		if (this.ordenAsc) {
+			this.tareas.sort(function (a, b) {
 				return a.minutos - b.minutos;
-			  })
+			})
 		}
 		else {
-			this.tareas.sort(function(a, b) {
+			this.tareas.sort(function (a, b) {
 				return b.minutos - a.minutos;
-			  })
+			})
 		}
-		this.ordenAsc=!this.ordenAsc
-		
+		this.ordenAsc = !this.ordenAsc
+
 	}
-	agregarFavorito(id){
-		this.tareas[id].favorito=true;
+	agregarFavorito(id) {
+		this.tareas[id].favorito = true;
 	}
 }
